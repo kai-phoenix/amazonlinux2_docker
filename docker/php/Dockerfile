@@ -18,10 +18,10 @@ RUN yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 RUN yum clean metadata \
     && yum install -y \
-    php81 php81-php php81-php-mbstring php81-php-pdo php81-php-xml \
-    php81-php-fpm php81-php-mysqlnd php81-php-gd
+    php82 php82-php php82-php-mbstring php82-php-pdo php82-php-xml \
+    php82-php-fpm php82-php-mysqlnd php82-php-gd
 
-RUN alternatives --install /usr/bin/php php /usr/bin/php81 1
+RUN alternatives --install /usr/bin/php php /usr/bin/php82 1
 
 # composer のインストール
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
